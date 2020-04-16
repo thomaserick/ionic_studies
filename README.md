@@ -22,7 +22,7 @@ For help getting started with Ionic, view our online [documentation](https://ion
 
 # Apps Desenvolvidos e conceitos utilizados.
 
-- [Sistema_de_Pedido:](https://github.com/thomaserick/ionic_studies/tree/CursoSpringIonic) Lazy_Loading,@Ngmodule,@IonicPage,io-item,io-label,io-button,binding,push(pilha de tela),setRoot
+- [Sistema_de_Pedido:](https://github.com/thomaserick/ionic_studies/tree/CursoSpringIonic) Lazy_Loading,@Ngmodule,@IonicPage,io-item,io-label,io-button,binding,push(pilha de tela),setRoot,ionViewWillEnter,ionViewDidLeave
 
 **Helpers**
 
