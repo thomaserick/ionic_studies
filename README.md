@@ -4,6 +4,8 @@
 
 For help getting started with Ionic, view our online [documentation](https://ionicframework.com/docs).
 
+For help getting started with Angular, view our online [documentation](https://angular.io/docs).
+
 ### Instalação
 
 - [Instalar](https://ionicframework.com/docs/intro/installation)
