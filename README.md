@@ -24,7 +24,7 @@ For help getting started with Angular, view our online [documentation](https://a
 
 # Apps Desenvolvidos e conceitos utilizados.
 
-- [Sistema_de_Pedido:](https://github.com/thomaserick/ionic_studies/tree/CursoSpringIonic) Lazy_Loading,@Ngmodule,@IonicPage,io-item,io-label,io-button,binding,push(pilha de tela),setRoot,ionViewWillEnter,ionViewDidLeave
+- [Sistema_de_Pedido:](https://github.com/thomaserick/ionic_studies/tree/CursoSpringIonic) Lazy_Loading,@Ngmodule,@IonicPage,io-item,io-label,io-button,binding,push(pilha de tela),setRoot,ionViewWillEnter,ionViewDidLeave,HttpClient
 
 **Helpers**
 
