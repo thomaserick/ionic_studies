@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage, MenuController } from 'ionic-angular';
+import { LoginDTO } from '../../app/models/login.dto';
 
 @IonicPage()
 @Component({
@@ -8,6 +9,11 @@ import { NavController, IonicPage, MenuController } from 'ionic-angular';
 })
 
 export class HomePage {
+
+  logins: LoginDTO = {
+    email: "",
+    senha: ""
+  };
 
   constructor(public navCtrl: NavController, public menu: MenuController) {
 
