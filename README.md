@@ -21,6 +21,8 @@ For help getting started with Angular, view our online [documentation](https://a
   - ionic start
 - Criar página
   - ionic generate page "Nome_da_página"
+- Start API
+  - ionic serve
 
 # Apps Desenvolvidos e conceitos utilizados.
 
