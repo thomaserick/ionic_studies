@@ -24,6 +24,12 @@ For help getting started with Angular, view our online [documentation](https://a
 - Start API
   - ionic serve
 
+### Dependencias
+
+- npm install @angular/http@latest
+- Instalar biblioteca para manipular token jwt:
+  - npm install --save angular2-jwt
+
 # Apps Desenvolvidos e conceitos utilizados.
 
 - [Sistema_de_Pedido:](https://github.com/thomaserick/ionic_studies/tree/CursoSpringIonic) Lazy_Loading,@Ngmodule,@IonicPage,io-item,io-label,io-button,binding,push(pilha de tela),setRoot,ionViewWillEnter,ionViewDidLeave,HttpClient,Interceptor
