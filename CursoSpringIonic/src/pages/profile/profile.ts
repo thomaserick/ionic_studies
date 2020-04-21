@@ -37,7 +37,13 @@ export class ProfilePage {
           this.getImageIfExist();
           //find image
         },
-          error => { });
+          error => {
+            if (error.status == 403) {
+              this.navCtrl.setRoot('HomePage');
+            }
+          });
+    } else {
+      this.navCtrl.setRoot('HomePage');
     }
 
   }
