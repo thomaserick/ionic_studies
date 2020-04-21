@@ -21,4 +21,14 @@ export class ClienteService {
         return this.http.get(url, { responseType: 'blob' });
     }
 
+    insert(clienteObj: ClienteDTO) {
+        return this.http.post(
+            `${API_CONFIG.baseUrl}clientes`, clienteObj, {
+            observe: 'response',
+            //Evitar erro de parde se Json
+            responseType: 'text'
+        }
+        )
+    }
+
 }
