@@ -32,7 +32,6 @@ export class ProdutosPage {
   loadImageUrls() {
     for (var i = 0; i < this.produtos.length; i++) {
       let produto = this.produtos[i];
-
       this.produtoService.getSmallImgFromBucket(produto.id)
         .subscribe(response => {
           produto.imageUrl = `${API_CONFIG.bucketBaseUrl}prod${produto.id}-small.jpg`;
@@ -40,8 +39,8 @@ export class ProdutosPage {
     }
   }
 
-  showDetail() {
-    this.navCtrl.push('ProdutoDetailPage');
+  showDetail(produto_id: string) {
+    this.navCtrl.push('ProdutoDetailPage', { produto_id: produto_id });
   }
 
 
