@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>categorias</ion-title>
+    <ion-title>Produtos</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,13 +11,14 @@
   <ion-list>
     <button
       ion-item
-      *ngFor="let categoria of categorias"
-      (click)="showProdutos(categoria.id)"
+      *ngFor="let produto of produtos"
+      (click)="showDetail(produto.id)"
     >
       <ion-thumbnail item-start>
-        <img src="{{bucketUrl}}cat{{categoria.id}}.jpg" />
+        <img [src]="produto.imageUrl || 'assets/imgs/prod.jpg'" />
       </ion-thumbnail>
-      <h2>{{categoria.name}}</h2>
+      <h2>{{produto.name}}</h2>
+      <p>{{produto.preco | currency}}</p>
     </button>
   </ion-list>
 </ion-content>
