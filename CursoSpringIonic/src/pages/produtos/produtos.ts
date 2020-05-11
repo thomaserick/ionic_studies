@@ -15,7 +15,10 @@ import { API_CONFIG } from "../../config/api.config";
   templateUrl: "produtos.html",
 })
 export class ProdutosPage {
-  produtos: ProdutoDTO[];
+  //Lista Vazia
+  produtos: ProdutoDTO[] = [];
+
+  page: number = 0;
 
   constructor(
     public navCtrl: NavController,
@@ -34,11 +37,15 @@ export class ProdutosPage {
     //Loading
     let loader = this.presentLoading();
 
-    this.produtoService.findByCategoria(categoria_id).subscribe(
+    this.produtoService.findByCategoria(categoria_id, this.page, 10).subscribe(
       (response) => {
-        this.produtos = response["content"];
+        let start = this.produtos.length;
+        this.produtos = this.produtos.concat(response["content"]);
+        let end = this.produtos.length - 1;
         loader.dismiss();
-        this.loadImageUrls();
+        console.log(this.page);
+        console.log(this.produtos);
+        this.loadImageUrls(start, end);
       },
       (error) => {
         loader.dismiss();
@@ -46,8 +53,8 @@ export class ProdutosPage {
     );
   }
 
-  loadImageUrls() {
-    for (var i = 0; i < this.produtos.length; i++) {
+  loadImageUrls(start: number, end: number) {
+    for (var i = start; i < end; i++) {
       let produto = this.produtos[i];
       this.produtoService.getSmallImgFromBucket(produto.id).subscribe(
         (response) => {
@@ -71,9 +78,21 @@ export class ProdutosPage {
   }
 
   doRefresh(refresher) {
+    this.page = 0;
+    this.produtos = [];
     this.loadData();
     setTimeout(() => {
       refresher.complete();
+    }, 1000);
+  }
+
+  doInfinite(infiniteScroll) {
+    //Page add e chama novamente a Load da Tela
+    this.page++;
+    this.loadData();
+
+    setTimeout(() => {
+      infiniteScroll.complete();
     }, 1000);
   }
 }
